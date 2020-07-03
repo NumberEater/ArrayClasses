@@ -1,11 +1,13 @@
-Ball[] balls = new Ball[50];
+int index = 1000;
+Ball[] balls = new Ball[index];
 
 void setup() {
- size(640, 480);
+ size(1000, 640);
  frameRate(120);
  
- for(int i = 0; i < 50; i++) {
-  balls[i] = new Ball(int(random(50, 400)), int(random(50, 400)), int(random(1, 3)), int(random(1, 3))); 
+ for(int i = 0; i < index; i++) {
+  balls[i] = new Ball(int(random(50, width - 50)), int(random(50, height - 50)), int(random(-3, 3)), int(random(-3, 3)), int(random(10, 50)), int(random(0, 255)), 255); 
+ 
  }
 }
 
@@ -13,7 +15,7 @@ void draw() {
  background(180);
  
  
- for(int i = 0; i < 50; i++) {
+ for(int i = 0; i < index; i++) {
   balls[i].display();
   balls[i].move();
   if(balls[i].getX() <= 25 || balls[i].getX() >= width - 25) {
