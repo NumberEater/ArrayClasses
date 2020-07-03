@@ -3,12 +3,18 @@ class Ball {
  private int y;
  private int dx;
  private int dy;
+ private int diameter;
+ private int grayscale;
+ private int opacity;
  
- public Ball(int x, int y, int dx, int dy) {
+ public Ball(int x, int y, int dx, int dy, int diameter, int grayscale, int opacity) {
   this.x = x;
   this.y = y;
   this.dx = dx;
   this.dy = dy;
+  this.diameter = diameter;
+  this.grayscale = grayscale;
+  this.opacity = opacity;
  }
  public int getX() {
   return this.x;
@@ -29,10 +35,10 @@ class Ball {
   this.dy = dy; 
  }
  public void display() {
-  fill(40, 40, 25);
-  stroke(40, 40, 25);
+  fill(grayscale, grayscale, grayscale, opacity);
+  stroke(grayscale);
   strokeWeight(1);
-  ellipse(x, y, 30, 30); 
+  ellipse(x, y, diameter, diameter); 
  }
  public void move() {
   this.x += this.dx;
